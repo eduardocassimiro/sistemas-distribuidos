@@ -1,6 +1,6 @@
 import socket
 import threading
-import chat_util_cliente
+from chat_util_cliente import *
 
 conexoes = 0
 
