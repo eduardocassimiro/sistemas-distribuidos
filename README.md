@@ -22,8 +22,8 @@ b. Uma vez conectado, o cliente pode enviar mensagens para a sala do chat; <br>
 c. /USUARIOS: ao enviar esse comando, o cliente recebe a lista de usuários atualmente conectados ao chat; <br>
 d. /NICK: com esse comando, o cliente pode trocar seu apelido. Todos os usuários conectados ao chat devem ser notificados da mudança. <br>
 e. /SAIR: ao enviar esse comando, uma mensagem é enviada à sala do chat informando que o usuário está saindo e encerra a participação no chat. <br>
-Links para os arquivos: <br>
 
+Links para os arquivos: <br>
 [chat_cliente.py](trabalho-1/chat_cliente.py)<br>
 [chat_servidor.py](trabalho-1/chat_servidor.py)<br>
 [chat_servidor.py](trabalho-1/chat_util_cliente.py)<br>
