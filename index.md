@@ -10,7 +10,8 @@
 ## Trabalho 2
 ### Parte 1 - Calculadora UDP
 [calculadora_cliente.py](trabalho-1/calculadora_cliente.py)<br>
-[calculadora_servidor.py](trabalho-1/calculadora_servidor.py)<br>
+[calculadora_servidor.py](sistemas-distribuidos/trabalho-1/calculadora_servidor.py)<br>
+[visu_terremotos_pt2.hmtl](trabalho-1/visu_terremotos_pt2.html)<br>
 
 ### Parte 2 - Chat TCP
 [chat_cliente.py](trabalho-1/chat_cliente.py)<br>
