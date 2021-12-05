@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Repositório da Cadeira de Sistema Distribuídos 2021.2
 
 You can use the [editor on GitHub](https://github.com/eduardocassimiro/sistemas-distribuidos/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
