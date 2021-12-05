@@ -10,6 +10,7 @@
 ## Trabalho 2
 ### Parte 1 - Calculadora UDP
 A primeira parte do trabalho consiste em, utilizando UDP, implementar uma calculadora remota que execute as 4 operações básicas (+,-,∙,÷) de números decimais. <br>
+
 Links para os arquivos: <br>
 [calculadora_cliente.py](trabalho-1/calculadora_cliente.py)<br>
 [calculadora_servidor.py](trabalho-1/calculadora_servidor.py)<br>
@@ -22,6 +23,7 @@ c. /USUARIOS: ao enviar esse comando, o cliente recebe a lista de usuários atua
 d. /NICK: com esse comando, o cliente pode trocar seu apelido. Todos os usuários conectados ao chat devem ser notificados da mudança. <br>
 e. /SAIR: ao enviar esse comando, uma mensagem é enviada à sala do chat informando que o usuário está saindo e encerra a participação no chat. <br>
 Links para os arquivos: <br>
+
 [chat_cliente.py](trabalho-1/chat_cliente.py)<br>
 [chat_servidor.py](trabalho-1/chat_servidor.py)<br>
 [chat_servidor.py](trabalho-1/chat_util_cliente.py)<br>
@@ -39,5 +41,6 @@ f. Pelo menos um dos equipamentos deve atuar como um sensor contínuo, que envia
 temperatura). <br>
 g. Pelo menos um dos equipamentos deve ter comportamento de um atuador (i.e., recebe comandos para modificar seu status, como desligar uma lâmpada); <br>
 h. Usuários devem acessar as informações dos objetos inteligentes e controlá-los através de uma interface de linha de comando no próprio processo Gateway. <br>
+
 Links para os arquivos: <br>
 
