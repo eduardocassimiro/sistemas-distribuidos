@@ -12,8 +12,8 @@
 A primeira parte do trabalho consiste em, utilizando UDP, implementar uma calculadora remota que execute as 4 operações básicas (+,-,∙,÷) de números decimais. <br>
 
 Links para os arquivos: <br>
-[calculadora_cliente.py](trabalho-1/calculadora_cliente.py)<br>
-[calculadora_servidor.py](trabalho-1/calculadora_servidor.py)<br>
+[calculadora_cliente.py](trabalho-2/parte-1/calculadora_cliente.py)<br>
+[calculadora_servidor.py](trabalho-2/parte-1/calculadora_servidor.py)<br>
 
 ### Parte 2 - Chat TCP
 A segunda parte do trabalho consiste em implementar um Chat usando TCP. O Chat deve suportar múltiplos clientes e um servidor. Todos os clientes devem estar na mesma sala do chat (i.e., as mensagens enviadas por um cliente devem ser recebidas por todos os clientes). A sala do Chat deve suportar no máximo 4 pessoas conectadas. Comandos que o usuário (i.e., cliente) pode enviar:
@@ -24,9 +24,9 @@ d. /NICK: com esse comando, o cliente pode trocar seu apelido. Todos os usuário
 e. /SAIR: ao enviar esse comando, uma mensagem é enviada à sala do chat informando que o usuário está saindo e encerra a participação no chat. <br>
 
 Links para os arquivos: <br>
-[chat_cliente.py](trabalho-1/chat_cliente.py)<br>
-[chat_servidor.py](trabalho-1/chat_servidor.py)<br>
-[chat_servidor.py](trabalho-1/chat_util_cliente.py)<br>
+[chat_cliente.py](trabalho-2/parte-2/chat_cliente.py)<br>
+[chat_servidor.py](trabalho-2/parte-2/chat_servidor.py)<br>
+[chat_servidor.py](trabalho-2/parte-2/chat_util_cliente.py)<br>
 
 
 ### Parte 3
@@ -43,4 +43,9 @@ g. Pelo menos um dos equipamentos deve ter comportamento de um atuador (i.e., re
 h. Usuários devem acessar as informações dos objetos inteligentes e controlá-los através de uma interface de linha de comando no próprio processo Gateway. <br>
 
 Links para os arquivos: <br>
-
+[gateway.py](trabalho-2/parte-3/gateway.py)<br>
+[lamp.py](trabalho-2/parte-3/lamp.py)<br>
+[sensor.py](trabalho-2/parte-3/sensor.py)<br>
+[client-controller.py](trabalho-2/parte-3/client-controller.py)<br>
+[lamp.ino](trabalho-2/parte-3/arduino/lamp/lamp.ino)<br>
+[sensor.ino](trabalho-2/parte-3/sensor/sensor.ino)<br>
