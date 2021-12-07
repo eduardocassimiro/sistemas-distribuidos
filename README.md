@@ -7,7 +7,14 @@
 
 ---
 
+## Trabalho 1
+
+Link para a gravação: [link-youtube](https://www.youtube.com/watch?v=x92WfJxZcUE&feature=youtu.be)
+
 ## Trabalho 2
+
+Link para a apresentação: [link-slide](https://docs.google.com/presentation/d/1IQ-sfUSFmchnC6XoC0gYm0y0VOTEX1Q_HI2gCrR30YU)
+
 ### Parte 1 - Calculadora UDP
 A primeira parte do trabalho consiste em, utilizando UDP, implementar uma calculadora remota que execute as 4 operações básicas (+,-,∙,÷) de números decimais. <br>
 
