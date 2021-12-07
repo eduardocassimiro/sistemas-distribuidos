@@ -36,7 +36,7 @@ Links para os arquivos: <br>
 [chat_servidor.py](trabalho-2/parte-2/chat_util_cliente.py)<br>
 
 
-### Parte 3
+### Parte 3 - Ambiente Inteligente
 A terceira parte do trabalho consiste em implementar um ambiente inteligente (e.g., casa, escritório, sala de aula, clínica médica, carro, etc) com as seguintes condições e
 restrições: <br>
 a. Uma aplicação chamada de Gateway deve ser implementada. Ela se comunica com cada um dos objetos “inteligentes” do local. A comunicação entre o Gateway e os objetos “inteligentes” deve ser implementada utilizando TCP e as mensagens definidas com Protocol Buffers. <br>
