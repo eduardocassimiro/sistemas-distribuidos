@@ -33,7 +33,6 @@ e. /SAIR: ao enviar esse comando, uma mensagem é enviada à sala do chat inform
 Links para os arquivos: <br>
 [chat_cliente.py](trabalho-2/parte-2/chat_cliente.py)<br>
 [chat_servidor.py](trabalho-2/parte-2/chat_servidor.py)<br>
-[chat_servidor.py](trabalho-2/parte-2/chat_util_cliente.py)<br>
 
 
 ### Parte 3 - Ambiente Inteligente
@@ -55,4 +54,4 @@ Links para os arquivos: <br>
 [sensor.py](trabalho-2/parte-3/sensor.py)<br>
 [client-controller.py](trabalho-2/parte-3/client-controller.py)<br>
 [lamp.ino](trabalho-2/parte-3/arduino/lamp/lamp.ino)<br>
-[sensor.ino](trabalho-2/parte-3/sensor/sensor.ino)<br>
+[sensor.ino](trabalho-2/parte-3/arduino/sensor/sensor.ino)<br>

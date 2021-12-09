@@ -58,28 +58,26 @@ def operate():
     global CONNECTED
     while True:
         if(CONNECTED == False):
-            waiting_conection()
+            waiting_conection() # Espera descoberta do gateway
         else:
             try:
                 print('Waiting for a command..')
-                s.setblocking(True)
-                msg, address = s.recvfrom(1024)
-                msg = msg.decode('utf-8')
+                s.setblocking(True) # Seta o recebimento para bloqueante
+                msg, address = s.recvfrom(1024) # Espera comando
+                msg = msg.decode('utf-8') # Decodifica mensagem
 
-                if msg == 'ON':
+                if msg == 'ON':  # Comando de acender a lampada
                     print('> Lamp was turned on')
-                    ser = serial.Serial('/dev/ttyACM1', 9600)
-                    time.sleep(1.8)
-                    ser.write(str.encode('l'))
-                    ser.close()
-                elif msg == 'OFF':
+                    ser = serial.Serial('/dev/ttyACM1', 9600) # Se conecta a uma porta serial do arduino
+                    time.sleep(1.8) # Delay para conexao com a porta serial
+                    ser.write(str.encode('l')) # Codifica para o caractere para binario e enviar pelo serial
+                    ser.close() # Encerra a conexão
+                elif msg == 'OFF': # Comenado de desligador a lampada
                     print('> Lamp was turned off')
                     ser = serial.Serial('/dev/ttyACM1', 9600)
                     time.sleep(1.8)
-                    ser.write(str.encode('d'))
-                    ser.close()
-                elif msg == 'IDF':
-                    s.sendto(bytes(info, 'utf-8'), (HOST,PORT))
+                    ser.write(str.encode('d')) # Codifica para o caractere para binario e enviar pelo serial
+                    ser.close() # Encerra a conexão
             except:
                 continue
 

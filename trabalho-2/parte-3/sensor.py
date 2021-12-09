@@ -3,7 +3,6 @@ import struct
 import sys
 import json
 import serial
-import time
 
 
 def receive_multicast():
@@ -58,31 +57,29 @@ def operate():
     global CONNECTED
     while True:
         if(CONNECTED == False):
-            waiting_conection()
+            waiting_conection() # Espera descoberta do gateway
         else:
             try:
                 print('Waiting for a command')
-                s.setblocking(True)
-                msg, _ = s.recvfrom(1024)
-                msg = msg.decode('utf-8')
+                s.setblocking(True) # Seta o recebimento para bloqueante
+                msg, _ = s.recvfrom(1024) # Espera comando
+                msg = msg.decode('utf-8') # Decodifica mensagem
 
-                if msg == 'ATT':
-                    ser = serial.Serial('/dev/ttyACM2', 9600)
-                    data = ser.readline().decode()
-                    s.sendto(bytes(data, 'utf-8'), (HOST,PORT))
+                if msg == 'ATT': # Comando para atualizar o sensor
+                    ser = serial.Serial('/dev/ttyACM2', 9600) # Se conecta a uma porta serial do arduino
+                    data = ser.readline().decode() # Lê o que tem escrito no serial
+                    s.sendto(bytes(data, 'utf-8'), (HOST,PORT)) # Envia valor do sensor para o gateway
                     print('> Sensor value has been updated')
-                elif msg == 'IDF':
-                    s.sendto(bytes(info, 'utf-8'), (HOST,PORT))
             except:
                 continue
 
 HOST = "127.0.0.1"
 PORT = 6789
 CONNECTED = False
-info = json.dumps({'id': 4,'name': 'LDR', 'type': 'sensor', 'ip': HOST, 'port': 6789})
+info = json.dumps({'id': 4,'name': 'LDR', 'type': 'sensor', 'ip': HOST, 'port': PORT})
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-#s.connect((HOST,6788))
+
 inicialize()
 operate()
 
