@@ -13,9 +13,11 @@ def receive_multicast():
 
     # Solicita ao sistema operacional para adicionar o socket ao grupo multicast em todas as interfaces
     group = socket.inet_aton(multicast_group) # Converte um endereço IPv4 do formato de string pontilhado
-    mreq = struct.pack('4sL', group, socket.INADDR_ANY) # Empacota uma lista de valores em uma representação string do tipo especificado
+    mreq = struct.pack('4sL', group, socket.INADDR_ANY) # Empacota uma lista de valores em uma representação 
+                                                        # string do tipo especificado
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1) # Habilita que varios sockets se conectem na mesma porta
-    sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq) # Habilita socket ingressar em um grupo multicast IPv4 em uma interface IPv4 local
+    sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq) # Habilita socket ingressar em um grupo multicast
+                                                                       # IPv4 em uma interface IPv4 local
 
     sock.bind(server_address) # Atribuindo porta e o endereço IP explicitamente para
     sock.settimeout(1) # Delay
