@@ -55,3 +55,24 @@ Links para os arquivos: <br>
 [client-controller.py](trabalho-2/parte-3/client-controller.py)<br>
 [lamp.ino](trabalho-2/parte-3/arduino/lamp/lamp.ino)<br>
 [sensor.ino](trabalho-2/parte-3/arduino/sensor/sensor.ino)<br>
+
+## Trabalho 3
+
+Link para a apresentação: [link-video](https://docs.google.com/presentation/d/1IQ-sfUSFmchnC6XoC0gYm0y0VOTEX1Q_HI2gCrR30YU/edit?usp=sharing)
+
+### Arquivos
+[home_assistent](trabalho-3/home_assistent.py)<br>
+[interface](trabalho-3/interface.py)<br>
+[sensor_luz](trabalho-3/sensor_luz.py)<br>
+[sensor_temperatura](trabalho-3/sensor_temperatura.py)<br>
+[smart_lamp.proto](trabalho-3/smart_lamp.proto)<br>
+[smart_lamp_pb2](trabalho-3/smart_lamp_pb2.py)<br>
+[smart_lamp_pb2_grpc](trabalho-3/smart_lamp_pb2_grpc.py)<br>
+[smart_lamp_server](trabalho-3/smart_lamp_server.py)<br>
+[smart_portao_pb2](trabalho-3/smart_portao_pb2.py)<br>
+[smart_portao_pb2_grpc](trabalho-3/smart_portao_pb2_grpc.py)<br>
+[smart_portao_server](trabalho-3/smart_portao_server.py)<br>
+[smart_ventilador.proto](trabalho-3/smart_ventilador.proto)<br>
+[smart_ventilador_pb2](trabalho-3/smart_ventilador_pb2.py)<br>
+[smart_ventilador_pb2_grpc](trabalho-3/smart_ventilador_pb2_grpc.py)<br>
+[smart_ventilador_server](trabalho-3/smart_ventilador_server.py)<br>

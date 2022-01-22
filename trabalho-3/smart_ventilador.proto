@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message VentiladorStatus {
+    int32 status = 1;
+}
+
+service Ventilador {
+    rpc ligarVentilador(VentiladorStatus) returns (VentiladorStatus) {}
+    rpc desligarVentilador(VentiladorStatus) returns (VentiladorStatus) {}
+}
