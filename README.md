@@ -62,6 +62,7 @@ O trabalho consiste em simular um ambiente inteligente (por exemplo, casa, escri
 ares-condicionados e aquecedores que podem trabalhar como atuadores e agir para modificar a temperatura ambiente.
 
 Link para o slide: [link-slide](https://docs.google.com/presentation/d/11ZdamoBGLiml_seT4QCidYtwbpawbXPCVzFvSLg3XwA/edit?usp=sharing)
+
 Link para a apresentação: [link-video](https://docs.google.com/presentation/d/1IQ-sfUSFmchnC6XoC0gYm0y0VOTEX1Q_HI2gCrR30YU/edit?usp=sharing)
 
 ### Arquivos
