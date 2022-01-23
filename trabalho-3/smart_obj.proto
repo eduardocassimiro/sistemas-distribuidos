@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+// Not necessary for Python but should still be declared to avoid name collisions 
+// in the Protocol Buffers namespace and non-Python languages
+package smartobj;
+
+// Style guide prefers prefixing enum values instead of surrounding
+// with an enclosing message
+enum TypeObject {
+    SENSOR = 0;
+    ACTUATOR = 1;
+}
+
+message SmartObject {
+    int32 id = 1;
+    string name = 2;
+    TypeObject type = 3;
+    string data = 4;
+}

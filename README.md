@@ -58,21 +58,34 @@ Links para os arquivos: <br>
 
 ## Trabalho 3
 
+O trabalho consiste em simular um ambiente inteligente (por exemplo, casa, escritório, sala de aula, clínica médica, carro, etc). Neste ambiente deverão estar presentes Sensores (que coletam dados do ambiente) e Atuadores (que podem agir no ambiente para modificá-lo de alguma forma). Por exemplo, em um ambiente residencial inteligente, podem existir sensores de temperatura que coletam periodicamente a temperatura ambiente e aparelhos como
+ares-condicionados e aquecedores que podem trabalhar como atuadores e agir para modificar a temperatura ambiente.
+
 Link para a apresentação: [link-video](https://docs.google.com/presentation/d/1IQ-sfUSFmchnC6XoC0gYm0y0VOTEX1Q_HI2gCrR30YU/edit?usp=sharing)
 
 ### Arquivos
+#### Interface Web
+[La_pagina](trabalho-3/La_pagina.zip)<br>
+#### Home Assistant
 [home_assistent](trabalho-3/home_assistent.py)<br>
-[interface](trabalho-3/interface.py)<br>
+#### Sensores 
 [sensor_luz](trabalho-3/sensor_luz.py)<br>
 [sensor_temperatura](trabalho-3/sensor_temperatura.py)<br>
-[smart_lamp.proto](trabalho-3/smart_lamp.proto)<br>
-[smart_lamp_pb2](trabalho-3/smart_lamp_pb2.py)<br>
-[smart_lamp_pb2_grpc](trabalho-3/smart_lamp_pb2_grpc.py)<br>
-[smart_lamp_server](trabalho-3/smart_lamp_server.py)<br>
-[smart_portao_pb2](trabalho-3/smart_portao_pb2.py)<br>
-[smart_portao_pb2_grpc](trabalho-3/smart_portao_pb2_grpc.py)<br>
+[sensor_campainha](trabalho-3/sensor_campainha.py)<br>
+#### Atuadores
 [smart_portao_server](trabalho-3/smart_portao_server.py)<br>
-[smart_ventilador.proto](trabalho-3/smart_ventilador.proto)<br>
-[smart_ventilador_pb2](trabalho-3/smart_ventilador_pb2.py)<br>
-[smart_ventilador_pb2_grpc](trabalho-3/smart_ventilador_pb2_grpc.py)<br>
+[smart_lamp_server](trabalho-3/smart_lamp_server.py)<br>
 [smart_ventilador_server](trabalho-3/smart_ventilador_server.py)<br>
+#### Protobuffer
+[smart_obj.proto](trabalho-3/smart_obj.proto)<br>
+[smart_ventilador.proto](trabalho-3/smart_ventilador.proto)<br>
+[smart_portao.proto](trabalho-3/smart_portao.proto)<br>
+[smart_lamp.proto](trabalho-3/smart_lamp.proto)<br>
+[smart_obj_pb2.py](trabalho-3/smart_obj_pb2.py)<br>
+[smart_lamp_pb2](trabalho-3/smart_lamp_pb2.py)<br>
+[smart_portao_pb2](trabalho-3/smart_portao_pb2.py)<br>
+[smart_ventilador_pb2](trabalho-3/smart_ventilador_pb2.py)<br>
+#### gRPC
+[smart_portao_pb2_grpc](trabalho-3/smart_portao_pb2_grpc.py)<br>
+[smart_lamp_pb2_grpc](trabalho-3/smart_lamp_pb2_grpc.py)<br>
+[smart_ventilador_pb2_grpc](trabalho-3/smart_ventilador_pb2_grpc.py)<br>
