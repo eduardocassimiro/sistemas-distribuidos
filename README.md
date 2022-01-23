@@ -69,7 +69,7 @@ Link para a apresentação: [link-video](https://docs.google.com/presentation/d/
 #### Interface Web
 [La_pagina](trabalho-3/La_pagina.zip)<br>
 #### Home Assistant
-[home_assistent](trabalho-3/home_assistent.py)<br>
+[home_assistant](trabalho-3/home_assistant.py)<br>
 #### Sensores 
 [sensor_luz](trabalho-3/sensor_luz.py)<br>
 [sensor_temperatura](trabalho-3/sensor_temperatura.py)<br>
