@@ -1,5 +1,3 @@
-from errno import ENAMETOOLONG
-from textwrap import indent
 import pika
 import sys
 from random import randrange,random
@@ -19,17 +17,22 @@ connection = pika.BlockingConnection(
     pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
 
-channel.exchange_declare(exchange='luz_log', exchange_type='fanout')
+channel.exchange_declare(exchange='camp_log', exchange_type='fanout')
 
 #device_info = {'id': 1,'name': 'TEMP', 'type': 'sensor'}
 #message = {'info': device_info,'data':0}
 
 # --- Enviando os dados
-
+cont = 1
 while(True):
-    sensor.data = str(randrange(500,550)) # Gera um número aleatório
-    message = sensor.SerializeToString(sensor) # Serializa todo o objeto para string
-    channel.basic_publish(exchange='luz_log', routing_key='', body=message) # enviar para fila
-    time.sleep(5)
-connection.close()
+    if cont == 5:
+        sensor.data = '1'
+        cont = 0
+    else:
+        sensor.data = '0'
+        cont += 1
 
+    message = sensor.SerializeToString(sensor) # Serializa todo o objeto para string
+    channel.basic_publish(exchange='camp_log', routing_key='', body=message) # enviar para fila
+    time.sleep(3)
+connection.close()

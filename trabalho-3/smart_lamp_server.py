@@ -1,23 +1,31 @@
 import grpc
 from concurrent import futures
 import time
+import serial
 
 # Importanto arquivos gerados
 import smart_lamp_pb2
 import smart_lamp_pb2_grpc
+
+ser1 = serial.Serial('/dev/ttyUSB0', 9600)
+time.sleep(1.8)
 
 class LampadaServicer(smart_lamp_pb2_grpc.LampadaServicer):
 
     def ligarLampada(self, request, context):
         response = smart_lamp_pb2.LampadaStatus()
         # Vai apresentar ligada
+        ser1.write(str.encode('n'))
+        print("Lampada Ligada")
         response.status = 1
         return response
 
     def desligarLampada(self, request, context):
         response = smart_lamp_pb2.LampadaStatus()
-        # -1 Vai representar desligada
+        # 0 Vai representar desligada
+        ser1.write(str.encode('m'))
         response.status = 0
+        print("Lampada Desligada")
         return response
 
 # Criando o servidor gRPC
@@ -27,7 +35,7 @@ smart_lamp_pb2_grpc.add_LampadaServicer_to_server(
         LampadaServicer(), server)
 
 # Escutando a porta 50051
-print('Iniciando servidor. Ouvindo na porta 50051.')
+print('Iniciando servidor X. Ouvindo na porta 50051.')
 server.add_insecure_port('[::]:50051')
 server.start()
 

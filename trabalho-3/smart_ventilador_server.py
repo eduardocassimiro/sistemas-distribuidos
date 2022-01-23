@@ -1,25 +1,32 @@
 import grpc
 from concurrent import futures
 import time
+import serial
 
 # Importanto arquivos gerados
 import smart_ventilador_pb2
 import smart_ventilador_pb2_grpc
 
+ser1 = serial.Serial('/dev/ttyUSB0', 9600)
+time.sleep(1.8)
+
 class VentiladorServicer(smart_ventilador_pb2_grpc.VentiladorServicer):
 
     def ligarVentilador(self, request, context):
         response = smart_ventilador_pb2.VentiladorStatus()
-        # Vai apresentar ligada
+        # 1 Vai apresentar ligado
+        ser1.write(str.encode('a'))
         print(response)
-        response.status = request.status
-        print(response.status)
+        print("Ventilador Ligado")
+        response.status = 1
         return response
 
     def desligarVentilador(self, request, context):
         response = smart_ventilador_pb2.VentiladorStatus()
+        ser1.write(str.encode('s'))
         print(response)
-        # -1 Vai representar desligada
+        print("Ventilador Desligado")
+        # 0 Vai representar desligado
         response.status = 0
         return response
 

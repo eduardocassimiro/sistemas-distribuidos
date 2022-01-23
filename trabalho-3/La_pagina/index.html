@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset = "utf-8">
+        <title>Home Assistant Client</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            html {
+                height: 100%;
+                /* max-height: 600px; */
+                background-color: hsla(200,40%,30%,.4);
+                background-image:   
+                  url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+                  url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+                  url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+                background-repeat: repeat-x;
+                background-position: 
+                  0 20%,
+                  0 100%,
+                  0 50%,
+                  0 100%,
+                  0 0;
+                background-size: 
+                  2500px,
+                  800px,
+                  500px 200px,
+                  1000px,
+                  400px 260px;
+                animation: 50s para infinite linear;
+                }
+              
+              @keyframes para{
+                100% {
+                  background-position: 
+                    -5000px 20%,
+                    -800px 95%,
+                    500px 50%,
+                    1000px 100%,
+                    400px 0;
+                  }
+                }
+            
+            *{
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            
+            body{
+                padding: 10px;
+                background-color: transparent;
+            }
+            
+            .card{
+                display: block;
+                padding: 20px;
+                box-shadow: 0px 2px 18px -4px rgba(0,0,0,0.75);
+            
+            }
+            
+            div {
+                position: absolute;
+                top:0;
+                bottom: 0;
+                left: 0;
+                right: 0;  
+                margin: auto;
+            }
+            
+            #section1 {
+                height: 80%; 
+                width:100%;
+                display: table;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script>
+            var lamp = 1
+            var vent = 1
+            var port = 1
+            // Tudo off
+            
+            handlebutton(1)
+            handlebutton(2)
+            handlebutton(3)
+            
+            setInterval(
+            function(){
+                let boxes = document.querySelectorAll(".el_disp1 > .disp"); // Listando os botoes
+                console.log('requiring')
+                const api_req = new XMLHttpRequest();
+            
+                api_req.onloadend = function(){
+                    
+                    let luz = boxes[0];
+                    let temp = boxes[1];
+                    let toque = boxes[2];
+            
+                    let r_api = api_req.responseText.split(':')
+            
+                    console.log(r_api)
+            
+                    luz.innerHTML = r_api[1];
+                    temp.innerHTML = r_api[3];
+                    toque.innerHTML = r_api[5];
+                }
+                api_req.open('GET', '/values');
+                api_req.send()
+                
+            }
+            ,5000)
+            
+            function handlebutton(x){
+                let btn = document.querySelectorAll(".botao > .disp"); // Listando os botoes
+                const api_req = new XMLHttpRequest();
+                let endp
+                let opc = 0
+                if (x == 1){ // lampada = /luz
+                    endp = "luz";
+                    opc = lamp;
+                    lamp == 0 ? lamp = 1 : lamp = 0;
+                }else if(x == 2){
+                    endp = "ventilador";
+                    opc = vent;
+                    vent == 0 ? vent = 1 : vent = 0;
+                }else if(x == 3){
+                    endp = "portao";
+                    opc = port;
+                    port == 0 ? port = 1 : port = 0;
+                }
+            
+                // console.log('/' + endp);
+                
+                api_req.open('POST', '/'+endp);
+                api_req.onload = function(){
+                    let values = btn[x-1];
+                    values.innerHTML = api_req.responseText;
+                }
+                
+                // api_req.setRequestHeader()
+            
+                api_req.send(opc)
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container" id="section1">
+            <h1 class="text-center display-3">Home Assistant Client</h1>
+            <div class="row">
+              <div class="col-sm">
+                <div class="card text-white bg-dark text-center" style="max-width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-dark">
+                            <h5 class="card-title">Lampada</h5>
+                            <button type="button" class="botao btn btn-dark btn-lg" id = "b1"  onclick="handlebutton(1)"><span class="disp">on</span></button>
+                        </li>
+                        <li class="list-group-item list-group-item-dark">
+                            <h5 class="card-title">Luminosidade</h5>
+                            <div id="b4" class="el_disp1 alert alert-dark"><span class="disp"></span></div>
+                        </li>
+                    </ul>
+                </div>
+    
+              </div>
+              <div class="col-sm">
+                <div class="card text-white bg-dark text-center" style="max-width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-dark">
+                            <h5 class="card-title">Ventilador</h5>
+                            <button type="button" class="botao btn btn-dark btn-lg" id = "b2"  onclick="handlebutton(2)"><span class="disp">on</span></button>
+                        </li>
+                        <li class="list-group-item list-group-item-dark">
+                            <h5 class="card-title">Temperatura</h5>
+                            <div id="b5" class="el_disp1 alert alert-dark"><span class="disp"></span></div>
+                        </li>
+                    </ul>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card text-white bg-dark text-center" style="max-width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-dark">
+                            <h5 class="card-title">Portao</h5>
+                            <button type="button" class="botao btn btn-dark btn-lg" id = "b3"  onclick="handlebutton(3)"><span class="disp">on</span></button>
+                        </li>
+                        <li class="list-group-item list-group-item-dark">
+                            <h5 class="card-title">Toque</h5>
+                            <div id="b6" class="el_disp1 alert alert-dark"><span class="disp"></span></div>
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>

@@ -25,4 +25,5 @@ while(True):
     sensor.data = str(randrange(22,24) + round(random(),2)) # Gera um número aleatório
     message = sensor.SerializeToString(sensor) # Serializa todo o objeto para string
     channel.basic_publish(exchange='temp_log', routing_key='', body=message) # enviar para fila
+    time.sleep(3)
 connection.close()

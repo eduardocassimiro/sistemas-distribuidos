@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message PortaoStatus {
+    int32 status = 1;
+}
+
+service Portao {
+    rpc abrirPortao(PortaoStatus) returns (PortaoStatus) {}
+    rpc fecharPortao(PortaoStatus) returns (PortaoStatus) {}
+}
