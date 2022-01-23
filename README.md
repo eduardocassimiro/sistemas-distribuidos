@@ -61,6 +61,7 @@ Links para os arquivos: <br>
 O trabalho consiste em simular um ambiente inteligente (por exemplo, casa, escritório, sala de aula, clínica médica, carro, etc). Neste ambiente deverão estar presentes Sensores (que coletam dados do ambiente) e Atuadores (que podem agir no ambiente para modificá-lo de alguma forma). Por exemplo, em um ambiente residencial inteligente, podem existir sensores de temperatura que coletam periodicamente a temperatura ambiente e aparelhos como
 ares-condicionados e aquecedores que podem trabalhar como atuadores e agir para modificar a temperatura ambiente.
 
+Link para o slide: [link-slide](https://docs.google.com/presentation/d/11ZdamoBGLiml_seT4QCidYtwbpawbXPCVzFvSLg3XwA/edit?usp=sharing)
 Link para a apresentação: [link-video](https://docs.google.com/presentation/d/1IQ-sfUSFmchnC6XoC0gYm0y0VOTEX1Q_HI2gCrR30YU/edit?usp=sharing)
 
 ### Arquivos
