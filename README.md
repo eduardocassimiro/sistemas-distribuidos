@@ -63,7 +63,7 @@ ares-condicionados e aquecedores que podem trabalhar como atuadores e agir para 
 
 Link para o slide: [link-slide](https://docs.google.com/presentation/d/11ZdamoBGLiml_seT4QCidYtwbpawbXPCVzFvSLg3XwA/edit?usp=sharing)
 
-Link para a apresentação: [link-video](https://drive.google.com/drive/folders/1R4uwU64lwX4nz_rKb5nHSxHBaPaKscPJ?usp=sharing)
+Link para a apresentação: [link-video](https://drive.google.com/file/d/1iSa7MHxra3nIhrJW0mTwePd5qqaTa3zk/view?usp=sharing)
 
 ### Arquivos
 #### Interface Web
